@@ -16,6 +16,9 @@
  */
 package org.jboss.as.quickstarts.ejbinwar.ejb;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
+
 import javax.ejb.Stateful;
 
 /**
@@ -32,6 +35,13 @@ public class GreeterEJB {
      * @return the personalised greeting.
      */
     public String sayHello(String name) {
-        return "Hello " + name;
+    	String hostAddress = "unknown";
+		try {
+			hostAddress = Inet4Address.getLocalHost().getHostAddress();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return "Hello " + name + ".  Node address is " + hostAddress;
     }
 }
