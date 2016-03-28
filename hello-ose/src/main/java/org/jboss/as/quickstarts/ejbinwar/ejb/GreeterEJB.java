@@ -24,24 +24,25 @@ import javax.ejb.Stateful;
 /**
  * A simple Hello World EJB. The EJB does not use an interface.
  * 
- * @author paul.robinson@redhat.com, 2011-12-21
  */
 @Stateful
 public class GreeterEJB {
     /**
-     * This method takes a name and returns a personalised greeting.
+     * This method takes a name and returns a personalized greeting.
      * 
      * @param name the name of the person to be greeted
-     * @return the personalised greeting.
+     * @return the personalized greeting.
      */
     public String sayHello(String name) {
+    	String msg = "Hello " + name;
     	String hostAddress = "unknown";
 		try {
 			hostAddress = Inet4Address.getLocalHost().getHostAddress();
+			
+			msg+= ".  Node address is " + hostAddress;
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return "Hello " + name + ".  Node address is " + hostAddress;
+        return msg;
     }
 }
