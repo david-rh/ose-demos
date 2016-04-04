@@ -35,14 +35,19 @@ public class GreeterEJB {
      */
     public String sayHello(String name) {
     	String msg = "Hello " + name;
-//    	String hostAddress = "unknown";
-//		try {
-//			hostAddress = Inet4Address.getLocalHost().getHostAddress();
-//			
-//			msg+= ".  Node address is " + hostAddress;
-//		} catch (UnknownHostException e) {
-//			e.printStackTrace();
-//		}
+    	msg = appendLocalIP(msg);
         return msg;
     }
+
+	private String appendLocalIP(String msg) {
+		String hostAddress = "unknown";
+		try {
+			hostAddress = Inet4Address.getLocalHost().getHostAddress();
+			
+			msg+= ".  Node address is " + hostAddress;
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		return msg;
+	}
 }
