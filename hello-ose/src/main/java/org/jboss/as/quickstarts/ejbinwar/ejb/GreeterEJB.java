@@ -35,7 +35,7 @@ public class GreeterEJB {
      */
     public String sayHello(String name) {
     	String msg = "Hello " + name;
-    	//msg = appendLocalIP(msg);
+    	msg = appendLocalIP(msg);
         return msg;
     }
 
