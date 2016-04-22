@@ -81,9 +81,6 @@
     <profile>
         <subsystem xmlns="urn:jboss:domain:logging:1.5">
             <console-handler name="CONSOLE">
-                <formatter>
-                    <named-formatter name="OPENSHIFT"/>
-                </formatter>
             </console-handler>
             <async-handler name="ASYNC">
                 <queue-length value="512"/>
