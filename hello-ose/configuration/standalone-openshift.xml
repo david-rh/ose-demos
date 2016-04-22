@@ -345,7 +345,7 @@
         <subsystem xmlns="urn:jboss:domain:web:2.2" default-virtual-server="default-host" native="false">
             <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
             <connector name="https" protocol="HTTP/1.1" socket-binding="https" scheme="https" secure="true">
-               <ssl name="jbosskey" password="changeit1" certificate-key-file="${jboss.server.config.dir}/keystore.jks"/>
+               <ssl name="jbosskey" password="changeit1" certificate-key-file="${jboss.server.config.dir}/jboss_keystore.jks"/>
             </connector>
             <connector name="ajp" protocol="AJP/1.3" scheme="http" socket-binding="ajp"/>
             <virtual-server name="default-host" enable-welcome-root="false">
