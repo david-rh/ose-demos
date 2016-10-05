@@ -44,7 +44,7 @@ public class GreeterEJB {
 		try {
 			hostAddress = Inet4Address.getLocalHost().getHostAddress();
 			
-			msg+= ".  Node address is " + hostAddress;
+			msg+= ".  Pod address is " + hostAddress;
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
